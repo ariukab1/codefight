@@ -1,0 +1,48 @@
+//Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
+
+int[] sortByHeight(int[] a) {
+
+    ArrayList<Integer> tree = new ArrayList<Integer>();
+    for(int i = 0; i < a.length; i++)
+    {
+        if(a[i]==-1)
+        {
+            tree.add(i);
+        }
+    }
+   // Collections.sort(tree);
+    ArrayList<Integer> t = new ArrayList<Integer>();
+    for(int i = 0; i < a.length; i++)
+    {
+        if(a[i] != -1)
+        {
+            t.add(a[i]);
+        }
+        
+    }
+    Collections.sort(t);
+    for(int i =0; i < tree.size(); i++)
+    {
+         int asd = tree.get(i);
+        t.add(asd, -1);
+    }  
+    System.out.println(t);
+  //  String[] myArray = myArrayList.toArray(new String[myArrayList.size()]);
+  //  Integer[] bar = foo.toArray(new Integer[foo.size()]);
+  //  List<Integer> myList = new ArrayList<Integer>();
+//Integer[] wrapperArr = myList.toArray(new Integer[myList.size()]);
+
+// If you want a `primitive` type array
+    //int[] arr = ArrayUtils.toPrimitive(wrapperArr);
+      
+    int[] arr = new int[t.size()];
+    
+    for(int i = 0; i < t.size(); i++) 
+    {
+    if (t.get(i) != null)
+    {
+        arr[i] = t.get(i);
+    }
+    }
+    return arr;
+}
